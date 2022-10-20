@@ -6,7 +6,6 @@ class Elefante extends Mamifero {
 
   @override
   void comer() {
-    super.comer();
-    print('elefante!');
+    print('Todos os elefantes de alimentam!');
   }
 }

@@ -10,6 +10,6 @@ class Cavalo extends Mamifero {
 
   void descricaoCavalo() {
     print(
-        'nome: $nome, raça: $raca, sexo: $sexo, idade: $idade, peso: $peso, quantidade de patas: $quantidadeDePatas');
+        'Cavalo nome: $nome, raça: $raca, sexo: $sexo, idade: $idade, peso: $peso, quantidade de patas: $quantidadeDePatas');
   }
 }
