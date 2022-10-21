@@ -1,0 +1,231 @@
+
+# Algoritmos
+
+Organize a resolução de cada uma das questões em uma pasta separada dentro da pasta `algoritmos`, cada pasta deve ter o nome com o número da questão que resolve. Dentro da pasta é obrigatória a existência de um arquivo `README.md` que descreva a linguagem utilizada e o grau de dificuldade que teve para resolver a questão, se precisou de pesquisa, etc.
+
+Se possível resolva orientado a objetos.
+
+Siga as orientações da página principal deste repositório em relação à tecnologia/linguagens que deve/pode utilizar para resolver estas questões.
+
+*** Desafio de sistema simples comercial ***
+
+1. Escreva um sistema que implemente a tela de venda e registre os dados de acordo com as regras de desconto para o cenário a seguir:
+
+Um determinado comércio possui uma base de produtos com a seguinte estrutura:
+  - Código
+  - Nome
+  - Valor unitário
+  - Desconto por quantidade
+    - acima de 10 - 5%
+    - acima de 20 - 10%
+    - acima de 30 - 20%
+    
+  É necessário gravar o registro de cada venda realizada para seus clientes, com os seguintes dados:
+  - Número da venda
+  - Data e hora
+  - Itens vendidos com 
+    - produto
+    - qtde
+    - vlr total de venda
+
+import 'dart:io';
+
+void main() {
+  DateTime now = DateTime.now();
+  print(
+      'Hora da Venda: ${now.day}/${now.month}/${now.year} ${now.hour}:${now.minute}:${now.second}');
+
+  int sellCod = 1;
+
+  print('Venda: $sellCod');
+
+  print('Código do produto');
+  stdin.readLineSync();
+
+  print('Nome do produto');
+  stdin.readLineSync();
+
+  print('Quantidade');
+  String? inputQuant = stdin.readLineSync();
+
+  print('Valor unitário');
+  String? inputValue = stdin.readLineSync();
+
+  double discount = 0.0;
+  double value = double.parse(inputValue!);
+  final quant = double.parse(inputQuant!);
+  final total = quant * value;
+
+  if (quant > 10) {
+    discount = (quant * value) * 5 / 100;
+  } else if (quant > 20) {
+    discount = (quant * value) * 10 / 100;
+  } else if (quant > 30) {
+    discount = (quant * value) * 20 / 100;
+  } else {
+    return print('total: R\$ $total');
+  }
+
+  print('total: R\$ $total');
+  final totalD = quant * value - discount;
+
+  print('total com desconto R\$ $totalD');
+}
+  
+    
+  
+*** Desafio de programação orientada a objetos ***
+
+2. Escreva um programa orientado à objetos onde uma classe `Animal` é super classe de `Mamifero` e `Ave`. `Cao`, `Gato`, `Elefante` e `Cavalo` são subclasses de `Mamifero`, sendo `Andorinha`, `Pato` e `Galinha` de `Ave`. Todos os animais têm peso e quantidade de patas. Todos os animais possuem as ações de andar e comer. Elefante possui uma maneira de comer diferente dos demais. Os cães possuem a ação de atacar. Andorinhas e patos implementam uma interface para o vôo. Animais, mamíferos e aves não podem existir, somente seus objetos concretos.
+
+Escreva uma classe que simule a execução de cada uma das ações, as ações podem apenas imprimir uma sáida em tela, por exemplo "Sou um cão e estou comendo".
+
+void main() {
+  final cao = Cao(15);
+  cao.comer();
+  cao.andar();
+  cao.atacar();
+  print('===================================');
+
+  final elefante = Elefante(1000);
+  elefante.comer();
+  elefante.andar();
+  print('===================================');
+
+  final cavalo = Cavalo(15);
+  cavalo.andar();
+  cavalo.comer();
+  print('===================================');
+
+  final gato = Gato(15);
+  gato.andar();
+  gato.comer();
+  print('===================================');
+
+  final galinha = Galinha(15);
+  galinha.andar();
+  galinha.comer();
+  print('===================================');
+
+  final pato = Pato(15);
+  pato.andar();
+  pato.comer();
+  pato.voar();
+  print('===================================');
+
+  final andorinha = Andorinha(15);
+  andorinha.andar();
+  andorinha.comer();
+  andorinha.voar();
+  print('===================================');
+}
+
+/*
+Escreva um programa orientado à objetos onde uma classe `Animal` é super classe
+de `Mamifero` e `Ave`. `Cao`, `Gato`, `Elefante` e `Cavalo` são subclasses de
+`Mamifero`, sendo `Andorinha`, `Pato` e `Galinha` de `Ave`. Todos os animais têm
+peso e quantidade de patas. Todos os animais possuem as ações de andar e comer. 
+Elefante possui uma maneira de comer diferente dos demais. Os cães possuem a ação
+de atacar. Andorinhas e patos implementam uma interface para o vôo. Animais, 
+mamíferos e aves não podem existir, somente seus objetos concretos.
+
+Escreva uma classe que simule a execução de cada uma das ações, as ações podem 
+apenas imprimir uma sáida em tela, por exemplo "Sou um cão e estou comendo".
+*/
+
+abstract class Animal {
+  final double peso;
+  final int patas;
+
+  void andar() {}
+
+  void comer() {}
+
+  Animal(this.peso, this.patas);
+}
+
+abstract class Mamifero extends Animal {
+  Mamifero(double peso) : super(peso, 4);
+}
+
+abstract class Ave extends Animal {
+  Ave(double peso) : super(peso, 2);
+}
+
+abstract class AvesQueVoam {
+  void voar();
+}
+
+class Cao extends Mamifero {
+  Cao(double peso) : super(peso);
+
+  @override
+  void comer() {
+    print('Eu sou um cão e estou comendo');
+  }
+
+  @override
+  void andar() {
+    print('Estou parado, pois estou comendo');
+  }
+
+  void atacar() {
+    print('Eu ataco se chegar perto da minha comida');
+  }
+}
+
+class Gato extends Mamifero {
+  Gato(double peso) : super(peso);
+  @override
+  void comer() {
+    print('Eu sou um gato e não estou comendo');
+  }
+
+  @override
+  void andar() {
+    print('Eu sou um gato e estou andando');
+  }
+}
+
+class Elefante extends Mamifero {
+  Elefante(double peso) : super(peso);
+
+  @override
+  void comer() {
+    print('Eu sou um elefante e como com a tromba');
+  }
+}
+
+class Cavalo extends Mamifero {
+  Cavalo(double peso) : super(peso);
+  @override
+  void comer() {
+    print('Eu sou um cavalo e como mato');
+  }
+}
+
+class Galinha extends Ave {
+  Galinha(double peso) : super(peso);
+  @override
+  void comer() {
+    print('Sou um Galinha e como não posso voar, estou comendo');
+  }
+}
+
+class Pato extends Ave implements AvesQueVoam {
+  Pato(double peso) : super(peso);
+
+  @override
+  void voar() {
+    print('Eu sou um Pato, eu voo, mas não muito bem');
+  }
+}
+
+class Andorinha extends Ave implements AvesQueVoam {
+  Andorinha(double peso) : super(peso);
+
+  @override
+  void voar() {
+    print('Sou uma Andorinha e voo muito rápido');
+  }
+}
