@@ -1,0 +1,26 @@
+Sim. O utilizei nos 3 projetos que eu trabalhei, criando branchs para novas features e realizando Pull Requests e Code Reviews. 
+
+Git é o sistema de controle de versão, onde podemos controlar nosso código fonte para ele não quebrar com atualizações indesejadas. Ele mantém rastreado todo nosso trabalho numa espécie de histórico. Já o Github é uma rede social que nos permite também gerenciar nossos repositórios Git. Em resumo, github é onde você pode "postar" seu trabalho caso seja open-source, e o Git é a ferramenta de controle de versionamento, assim como o ASDF para Linux.
+
+Produzi pouca coisa para a Web, meu desenvolvimento é mais voltado para Mobile. 
+A requisição HTTP é feita pelo client através da URL, que contém os seguintes elementos: 
+uma linha de requisição;
+uma série de HTTP headers;
+e um corpo de mensagem (body), se necessário;
+A linha de requisição é a primeira linha de mensagem da requisição, consiste em pelo menos 3 itens: Um metodo, um caminho, e uma versão HTTP.
+
+Ex: POST /program/paste/post_page.html HTTP/1.1
+
+Após a requisição do client, vem a resposta do servidor. O objetivo da resposta é levar o usuário ao endereço desejado, ou informar ao usuário que a alteração foi feita com sucesso, ou informar algum erro que tenha ocorrido no meio do processo. Uma resposta HTTP contém 3 itens:
+uma linha de status;
+uma série de HTTP headers;
+e um corpo de mensagem(body), se necessario. 
+
+Conheço. API's são utilizadas para acessarmos dados através de requisiçoes web. Cito como exemplo a API do site The Movie Database, onde conseguimos fazer GET's, POST'S, e PUT's. E também a API baconmockup, que é uma API aberta que contém imagens em vários tamanhos de bacon. https://baconmockup.com/
+
+Nunca cheguei a utilizar, sei que é utilizando para transportar XML/JSON.
+
+Conheço. Basicamente são operações que deixam o seu programa continuar sem travar enquanto uma função, por exemplo, ainda não finalizou. Ou pegando dados de uma API, escrevendo em banco de dados, etc. Neste desafio, foi utilizado para realizar a navegação de rotas.
+
+Conheço MVC, Clean Architecture, etc. Implementaria Clean Architecture em um projeto muito grande como em um sistema de softbank, por exemplo. Seguiria com as pastas principais domain/data/presenter, onde na camada domain eu colocaria as entidades, regras de negócio, contrato de repositores e todos os casos de uso. Na pasta data ficariam as implementações dos repositories da camada domain, nesta pasta ficariam as configurações de requisições HTTP e Firebase, por exemplo. Na camada presenter entraria o Flutter de fato, aqui eu organizaria o gerenciamento de estado, telas, rotas, widgets compartilhados, etc. 
+
