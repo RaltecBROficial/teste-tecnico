@@ -1,0 +1,33 @@
+#root {
+  display: flex;
+  max-width: 1280px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2{
+  font-weight: 500;
+}
+
+.form{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form > label{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: fit-content;
+}
+
