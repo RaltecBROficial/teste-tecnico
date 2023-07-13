@@ -2,13 +2,6 @@
 
 Repositório com questões/desafios de desenvolvimento de software
 
-## Orientações para disponibilizar este desafio
-
-- Crie um fork do projeto com o nome da pessoa candidata
-- Remova esta seção
-- Atualize as informações onde XXX aparece
-- Remova seções específicas para tecnologias que não fazem parte deste desafio
-
 ## Orientações para a pessoa candidata
 
 * Abra uma branch nova para seu trabalho
@@ -18,5 +11,5 @@ Repositório com questões/desafios de desenvolvimento de software
 
 * Estes desafios nos auxiliam a identificar sua capacidade de compreender rapidamente um cenário e desenvolver a solução com lógica de programação utilizando sua experiência.  
 
-* Utilizar a seguinte stack: linguagem XXX, framework XXX, bando de dados XXX, outras ferramentas: XXX
+* Utilizar a seguinte stack: linguagem Javascript, Java, framework React.js outras ferramentas: Visual Studio Code, Git.
 
