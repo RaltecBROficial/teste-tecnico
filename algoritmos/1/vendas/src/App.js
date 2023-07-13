@@ -107,7 +107,6 @@ const App = () => {
   return (
     <div className='container'>
       <ProductForm onAddProduct={handleAddProduct} />
-      {/* Mostrar lista de vendas */}
       <div className='lista-venda'>
         <h2>Lista de Vendas:</h2>
         {vendas.map((venda, index) => (
