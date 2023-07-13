@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.container {
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #696969;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.catalogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+.carrinho {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-items: baseline;
+  margin-top: 2%;
+
+}
+
+.carrinho-info {
+  font-size: 16px;
+}
+
+.carrinho-button {
+  height: 50px;
+  width: 100%;
+  background-color: brown;
+  color: #f7f7f7;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.carrinho-button:hover {
+  border: 1px solid brown;
+  background-color: white;
+  color: brown;
+}
+
+.lista-venda {
+  margin: 0 5%;
+}
