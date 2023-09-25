@@ -11,5 +11,5 @@ Repositório com questões/desafios de desenvolvimento de software
 
 * Estes desafios nos auxiliam a identificar sua capacidade de compreender rapidamente um cenário e desenvolver a solução com lógica de programação utilizando sua experiência.  
 
-* Utilizar a seguinte stack: linguagem C#, framework XXX, bando de dados XXX, outras ferramentas: XXX
+* Utilizar a seguinte stack: linguagem C#, framework EntityFrameworkCore, bando de dados SQL Server
 
