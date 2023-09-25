@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Vendas</title>
+</head>
+<body>
+    <h1>Sistema de Vendas</h1>
+    <div>
+        <label for="productCode">Código do Produto:</label>
+        <input type="text" id="productCode">
+        <label for="productName">Nome do Produto:</label>
+        <input type="text" id="productName">
+        <label for="unitPrice">Valor Unitário:</label>
+        <input type="number" id="unitPrice">
+        <label for="quantity">Quantidade:</label>
+        <input type="number" id="quantity">
+        <button onclick="addProduct()">Adicionar Produto</button>
+    </div>
+    <div>
+        <h2>Carrinho de Compras</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor Unitário</th>
+                    <th>Desconto</th>
+                    <th>Valor Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart">
+                
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button onclick="checkout()">Finalizar Compra</button>
+    </div>
+    <div>
+        <h2>Histórico de Vendas</h2>
+        <ul id="salesHistory">
+            
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
