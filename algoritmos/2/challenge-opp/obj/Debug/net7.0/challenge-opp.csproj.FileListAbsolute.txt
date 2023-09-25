@@ -1,0 +1,15 @@
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\bin\Debug\net7.0\challenge-opp.exe
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\bin\Debug\net7.0\challenge-opp.deps.json
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\bin\Debug\net7.0\challenge-opp.runtimeconfig.json
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\bin\Debug\net7.0\challenge-opp.dll
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\bin\Debug\net7.0\challenge-opp.pdb
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.csproj.AssemblyReference.cache
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.AssemblyInfoInputs.cache
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.AssemblyInfo.cs
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.csproj.CoreCompileInputs.cache
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.dll
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\refint\challenge-opp.dll
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.pdb
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\challenge-opp.genruntimeconfig.cache
+C:\Users\Joao\source\repos\joao-souza-teste\algoritmos\2\challenge-opp\obj\Debug\net7.0\ref\challenge-opp.dll
