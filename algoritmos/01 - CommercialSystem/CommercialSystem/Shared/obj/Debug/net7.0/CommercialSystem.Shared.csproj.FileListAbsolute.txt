@@ -1,0 +1,12 @@
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\bin\Debug\net7.0\CommercialSystem.Shared.deps.json
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\bin\Debug\net7.0\CommercialSystem.Shared.dll
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\bin\Debug\net7.0\CommercialSystem.Shared.pdb
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.csproj.AssemblyReference.cache
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.AssemblyInfoInputs.cache
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.AssemblyInfo.cs
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.csproj.CoreCompileInputs.cache
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.dll
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\refint\CommercialSystem.Shared.dll
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\CommercialSystem.Shared.pdb
+C:\Desenv\CommercialSystem\CommercialSystem\Shared\obj\Debug\net7.0\ref\CommercialSystem.Shared.dll
