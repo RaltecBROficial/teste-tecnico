@@ -1,0 +1,181 @@
+﻿@page "/sales"
+
+@inject SalesService salesService
+@inject ProductService productService
+
+<h2 style="text-align:center; margin-top: 20px;">Tela de Venda</h2>
+
+<!-- Seção de Nova Venda -->
+<div class="row" style="margin: 40px; border: 1px solid #4b5563; border-radius: 5px;">
+    <h3 style="text-align:center; margin-top: 20px;">Nova Venda</h3>
+
+    <div class="col-md-6" style="padding:50px">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Preço Unitário</th>
+                    <th>Quantidade</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var saleItem in newSale.SaleItems)
+                {
+                    <tr>
+                        <td>@saleItem.ProductId</td>
+                        <td>@saleItem.ProductName</td>
+                        <td>@saleItem.ProductVlrUnit</td>
+                        <td>@saleItem.QtdProduct</td>
+                        <td>@saleItem.Subtotal.ToString("F2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+
+    <div class="col-md-6" style="padding:50px">
+        <EditForm Model="newSaleItem" OnValidSubmit="AddToSaleItem" Context="FormSaleItem">
+            <DataAnnotationsValidator/>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="productCode">Produto:</label>
+                    @if (lstProduct.Count > 0)
+                    {
+                        <select disabled="@(!isSaveSale)" class="form-control" id="productCode" @bind="newSaleItem.ProductId">
+                            <option value="0">Selecione um Produto</option>
+                            @foreach (var product in lstProduct)
+                            {
+                                <option value="@product.Id">@product.Name</option>
+                            }
+                        </select>
+                        <ValidationMessage style="font-size: 14px; color: red; margin-bottom: 10px;" For="() => newSaleItem.ProductId" />
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantidade:</label>
+                <InputText style="@(isSaveSale ? "": "disable: true")" type="number" class="form-control" id="quantity" @bind-Value="newSaleItem.QtdProduct" />
+                <ValidationMessage style="font-size: 14px; color: red; margin-bottom: 10px;" For="() => newSaleItem.QtdProduct" />
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 10px;" disabled="@(!isSaveSale)">Adicionar à Venda</button>
+        </EditForm>
+    </div>
+
+    <h4 style="text-align:center;">Total da Venda: @newSale.VlrAmount.ToString("F2")</h4>
+    <div class="form-group text-center">
+        <button @onclick="AddSale" class="btn btn-primary" style="margin-top: 10px; margin-bottom: 30px; @(isSaveSale ? "display: none" : "")">Nova Venda</button>
+
+        <button @onclick="SaveSale" class="btn btn-primary" style="margin-top: 10px; margin-bottom: 30px; @(isSaveSale ? "" : "display: none")">Finalizar Venda</button>
+    </div>
+</div>
+
+<!-- Seção de Lista de Vendas -->
+<div class="row" style="margin: 40px; border: 1px solid #4b5563; border-radius: 5px;">
+    <h3 style="text-align:center; margin-top: 20px;">Vendas Realizadas</h3>
+    <div class="col-md-12" style="padding:50px">
+        <h3>Vendas Realizadas</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID da Venda</th>
+                    <th>Produtos Vendidos</th>
+                    <th>Data da Venda</th>
+                    <th>Total da Venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in lstSale)
+                {
+                    <tr>
+                        <td>@sale.Id</td>
+                        <td>
+                            @if (sale.lstProductInform.Any())
+                            {
+                                @string.Join(", ", sale.lstProductInform)
+                            }
+                        </td>
+                        <td>@sale.SaleDate</td>
+                        <td>@sale.VlrAmount.ToString("F2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal de Erro -->
+<div class="modal" tabindex="-1" role="dialog" style="display: @(isShowModal ? "block" : "none")">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Erro</h5>
+                <button type="button" class="close" @onclick="() => isShowModal = false">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <p>É necessário adicionar pelo menos um produto!</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="() => isShowModal = false">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Product> lstProduct { get; set; } = new List<Product>();
+    private List<Sale> lstSale { get; set; } = new List<Sale>();
+
+    private Sale newSale = new Sale();
+    private SaleItem newSaleItem = new SaleItem();
+
+    bool isSaveSale;
+    bool isShowModal;
+
+    protected override async Task OnInitializedAsync()
+    {
+        lstProduct = await productService.GetProductsAsync();
+        lstSale = await salesService.GetSalesAsync();
+    }
+
+    private async Task AddSale()
+    {
+        newSale = await salesService.AddSaleAsync(newSale);
+        isSaveSale = true;
+    }
+
+    private async Task AddToSaleItem()
+    {
+        newSaleItem.SaleId = newSale.Id;
+
+        newSaleItem = await salesService.AddSaleItemAsync(newSaleItem);
+        newSale.SaleItems.Add(newSaleItem);
+
+        newSale.VlrAmount += newSaleItem.Subtotal;
+
+        newSaleItem = new SaleItem();
+    }
+
+    private async Task SaveSale()
+    {
+        if (newSale.SaleItems.Any())
+        {
+            lstSale.Add(await salesService.AlterSaleAsync(newSale));
+
+            newSale = new Sale();
+            isSaveSale = false;
+        }
+        else
+        {
+            isShowModal = true;
+        }
+    }
+}
