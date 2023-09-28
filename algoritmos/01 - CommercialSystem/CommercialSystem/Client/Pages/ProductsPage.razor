@@ -1,0 +1,65 @@
+﻿@page "/products"
+
+@inject ProductService productService
+
+<div class="row">
+    <div class="col-md-6" style="padding: 30px;">
+        <h2 class="mt-4">Lista de Produtos</h2>
+
+        <ul class="list-group">
+            @foreach (var product in products)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>@product.Name</span>
+                    <span class="badge badge-primary badge-pill" style="--bs-badge-color: dark;">R$ @string.Format(product.UnitPrice, "F2")</span>
+
+                    <!-- Botão de Exclusão -->
+                    <button class="btn btn-danger" @onclick="() => RemoveProduct(product)">Excluir</button>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-6" style="padding: 30px;">
+        <h4 class="mt-4">Adicionar Novo Produto</h4>
+        <EditForm Model="newProduct" OnValidSubmit="AddProduct">
+            <DataAnnotationsValidator/>
+
+            <div class="form-group">
+                <label for="productName">Nome do Produto:</label>
+                <InputText type="text" class="form-control" id="productName" @bind-Value="newProduct.Name"/>
+                <ValidationMessage style="font-size: 14px; color: red; margin-bottom: 10px;" For="() => newProduct.Name" />
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Preço do Produto (R$):</label>
+                <InputText type="number" class="form-control" id="productPrice" @bind-Value="newProduct.UnitPrice"/>
+                <ValidationMessage style="font-size: 14px; color: red; margin-bottom: 10px;" For="() => newProduct.UnitPrice" />
+            </div>
+            <a class="btn btn-primary" style="margin-top: 10px;">Adicionar Produto</a>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private List<Product> products = new List<Product>();
+    private Product newProduct = new Product();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await productService.GetProductsAsync();
+    }
+
+    private async Task AddProduct()
+    {
+        var addedProduct = await productService.AddProductAsync(newProduct);
+        products.Add(addedProduct);
+
+        // Limpar os campos após a adição
+        newProduct = new Product();
+    }
+
+    private async Task RemoveProduct(Product product)
+    {
+        await productService.RemoveProductAsync(product.Id);
+        products.Remove(product);
+    }
+}
