@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTecnico.Raltec01.Domain", "TesteTecnico.Raltec01.Domain\TesteTecnico.Raltec01.Domain.csproj", "{8806CEF7-66EF-48C1-B4C9-45352082FCFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteTecnico.Raltec01.Domain", "TesteTecnico.Raltec01.Domain\TesteTecnico.Raltec01.Domain.csproj", "{8806CEF7-66EF-48C1-B4C9-45352082FCFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTecnico.Raltec01.Infra.Data", "TesteTecnico.Raltec01.Infra.Data\TesteTecnico.Raltec01.Infra.Data.csproj", "{621A819A-C298-4D72-B891-881133349407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteTecnico.Raltec01.Infra.Data", "TesteTecnico.Raltec01.Infra.Data\TesteTecnico.Raltec01.Infra.Data.csproj", "{621A819A-C298-4D72-B891-881133349407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTecnico.Raltec01.UI.Web", "TesteTecnico.Raltec01.UI.Web\TesteTecnico.Raltec01.UI.Web.csproj", "{70C40950-D36C-4CA0-8672-42960B293D79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{621A819A-C298-4D72-B891-881133349407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{621A819A-C298-4D72-B891-881133349407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{621A819A-C298-4D72-B891-881133349407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C40950-D36C-4CA0-8672-42960B293D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C40950-D36C-4CA0-8672-42960B293D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C40950-D36C-4CA0-8672-42960B293D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C40950-D36C-4CA0-8672-42960B293D79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
