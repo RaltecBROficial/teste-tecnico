@@ -1,7 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using TesteTecnico.Raltec01.Domain.Repositories;
+using TesteTecnico.Raltec01.Infra.Data.Context;
+using TesteTecnico.Raltec01.Infra.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+{
+	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+		sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(2, TimeSpan.FromSeconds(5), null).MigrationsHistoryTable("_version_migration"));
+});
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
