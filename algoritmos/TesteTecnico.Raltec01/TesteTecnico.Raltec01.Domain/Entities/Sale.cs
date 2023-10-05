@@ -4,5 +4,6 @@
 	{
 		public int CodeSale { get; set; }
 		public DateTime DateAndHour { get; set; }
+		ICollection<SaleItem> Items { get; set; }
 	}
 }
