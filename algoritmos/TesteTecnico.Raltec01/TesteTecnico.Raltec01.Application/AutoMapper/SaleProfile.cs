@@ -9,9 +9,12 @@ namespace TesteTecnico.Raltec01.Application.AutoMapper
 		public SaleProfile()
 		{
 			CreateMap<Sale, SaleViewModel>()
-				.ForSourceMember(sale => sale.Items, options => options.DoNotValidate())
-				.ReverseMap()
-				.ForMember(sale => sale.Items, options => options.Ignore());
+				.ForMember(sale => sale.Items,
+					options => options.MapFrom(src => src.Items));
+
+			CreateMap<SaleViewModel, Sale>()
+				.ForMember(sale => sale.Items,
+					options => options.MapFrom(src => src.Items));
 		}
 	}
 }
