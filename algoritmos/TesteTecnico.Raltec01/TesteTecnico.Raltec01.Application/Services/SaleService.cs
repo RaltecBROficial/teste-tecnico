@@ -27,9 +27,18 @@ namespace TesteTecnico.Raltec01.Application.Services
 			return _mapper.Map<IEnumerable<SaleViewModel>>(await _unitOfWork.SaleRepository.GetAllAsync());
 		}
 
-		public Task AddAsync(SaleViewModel entity)
+		public async Task AddAsync(SaleViewModel entity)
 		{
-			return _unitOfWork.SaleRepository.AddAsync(_mapper.Map<Sale>(entity));
+			CalculateSaleValue(entity);
+			var sale = _mapper.Map<Sale>(entity);
+
+			foreach (var item in sale.Items)
+			{
+				item.SaleId = sale.Id;
+			}
+
+			await _unitOfWork.SaleRepository.AddAsync(sale);
+			await _unitOfWork.SaveAsync();
 		}
 
 		public Task UpdateAsync(SaleViewModel entity)
@@ -46,6 +55,34 @@ namespace TesteTecnico.Raltec01.Application.Services
 		{
 			_unitOfWork.DisposeAsync();
 			GC.SuppressFinalize(this);
+		}
+
+		private void CalculateSaleValue(SaleViewModel sale)
+		{
+			decimal discount;
+
+			foreach (var itemSale in sale.Items)
+			{
+				if (itemSale.Quantity > 30)
+				{
+					discount = 20;
+				}
+				else if (itemSale.Quantity > 20)
+				{
+					discount = 10;
+				}
+				else
+				{
+					discount = 5;
+				}
+
+				var product = _unitOfWork.ProductRepository.GetByIdAsync(itemSale.ProductId);
+
+				itemSale.Value = product.Result.UnitValue * itemSale.Quantity;
+				decimal discountPrice = itemSale.Value * (discount / 100);
+
+				itemSale.Value -= discountPrice;
+			}
 		}
 	}
 }
