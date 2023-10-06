@@ -23,7 +23,7 @@ namespace TesteTecnico.Raltec01.Infra.Data.Repositories
 
 		public async ValueTask DisposeAsync()
 		{
-			await _context.SaveChangesAsync();
+			await _context.DisposeAsync();
 			GC.SuppressFinalize(this);
 		}
 
