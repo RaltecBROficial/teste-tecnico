@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TesteTecnico.Raltec01.Application\TesteTecnico.Raltec01.Application.csproj" />
     <ProjectReference Include="..\TesteTecnico.Raltec01.Infra.Data\TesteTecnico.Raltec01.Infra.Data.csproj" />
   </ItemGroup>
