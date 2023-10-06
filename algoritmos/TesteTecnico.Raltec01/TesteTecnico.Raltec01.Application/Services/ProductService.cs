@@ -9,37 +9,37 @@ namespace TesteTecnico.Raltec01.Application.Services
 	public class ProductService : IProductService
 	{
 		private readonly IMapper _mapper;
-		private readonly IProductRepository _productRepository;
+		private readonly IUnitOfWork _unitOfWork;
 
-		public ProductService(IMapper mapper, IProductRepository productRepository)
+		public ProductService(IMapper mapper, IUnitOfWork unitOfWork)
 		{
 			_mapper = mapper;
-			_productRepository = productRepository;
+			_unitOfWork = unitOfWork;
 		}
 
 		public async Task<ProductViewModel> GetByIdAsync(Guid id)
 		{
-			return _mapper.Map<ProductViewModel>(await _productRepository.GetByIdAsync(id));
+			return _mapper.Map<ProductViewModel>(await _unitOfWork.ProductRepository.GetByIdAsync(id));
 		}
 
 		public async Task<IEnumerable<ProductViewModel>> GetAllAsync()
 		{
-			return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync());
+			return _mapper.Map<IEnumerable<ProductViewModel>>(await _unitOfWork.ProductRepository.GetAllAsync());
 		}
 
 		public Task AddAsync(ProductViewModel entity)
 		{
-			return _productRepository.AddAsync(_mapper.Map<Product>(entity));
+			return _unitOfWork.ProductRepository.AddAsync(_mapper.Map<Product>(entity));
 		}
 
 		public Task UpdateAsync(ProductViewModel entity)
 		{
-			return _productRepository.UpdateAsync(_mapper.Map<Product>(entity));
+			return _unitOfWork.ProductRepository.UpdateAsync(_mapper.Map<Product>(entity));
 		}
 
 		public Task RemoveAsync(ProductViewModel entity)
 		{
-			return _productRepository.RemoveAsync(_mapper.Map<Product>(entity));
+			return _unitOfWork.ProductRepository.RemoveAsync(_mapper.Map<Product>(entity));
 		}
 
 		public void Dispose()
