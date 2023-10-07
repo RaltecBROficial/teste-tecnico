@@ -44,6 +44,7 @@ namespace TesteTecnico.Raltec01.Application.Services
 
 		public void Dispose()
 		{
+			_unitOfWork.DisposeAsync();
 			GC.SuppressFinalize(this);
 		}
 	}
