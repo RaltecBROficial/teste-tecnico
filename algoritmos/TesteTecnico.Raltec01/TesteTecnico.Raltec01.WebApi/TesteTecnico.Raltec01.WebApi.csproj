@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>60778760-d57e-4e77-b821-f9effdabfa1f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TesteTecnico.Raltec01.Application\TesteTecnico.Raltec01.Application.csproj" />
+    <ProjectReference Include="..\TesteTecnico.Raltec01.Infra.Data\TesteTecnico.Raltec01.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
