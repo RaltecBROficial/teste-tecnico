@@ -31,6 +31,8 @@ namespace TesteTecnico.Raltec01.WebApi.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(ProductViewModel product)
 		{
+			if (!ModelState.IsValid) return BadRequest();
+
 			await _productService.AddAsync(product);
 			return Ok();
 		}

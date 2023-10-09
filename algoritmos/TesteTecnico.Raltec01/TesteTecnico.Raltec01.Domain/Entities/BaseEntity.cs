@@ -2,6 +2,8 @@
 {
 	public abstract class BaseEntity
 	{
-		public Guid Id { get; } = Guid.NewGuid();
+		protected BaseEntity() => Id = Guid.NewGuid();
+
+		public Guid Id { get; set; }
 	}
 }

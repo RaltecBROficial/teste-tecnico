@@ -27,19 +27,23 @@ namespace TesteTecnico.Raltec01.Application.Services
 			return _mapper.Map<IEnumerable<ProductViewModel>>(await _unitOfWork.ProductRepository.GetAllAsync());
 		}
 
-		public Task AddAsync(ProductViewModel entity)
+		public async Task AddAsync(ProductViewModel entity)
 		{
-			return _unitOfWork.ProductRepository.AddAsync(_mapper.Map<Product>(entity));
+			entity.Id = Guid.NewGuid();
+			await _unitOfWork.ProductRepository.AddAsync(_mapper.Map<Product>(entity));
+			await _unitOfWork.SaveAsync();
 		}
 
-		public Task UpdateAsync(ProductViewModel entity)
+		public async Task UpdateAsync(ProductViewModel entity)
 		{
-			return _unitOfWork.ProductRepository.UpdateAsync(_mapper.Map<Product>(entity));
+			await _unitOfWork.ProductRepository.UpdateAsync(_mapper.Map<Product>(entity));
+			await _unitOfWork.SaveAsync();
 		}
 
-		public Task RemoveAsync(ProductViewModel entity)
+		public async Task RemoveAsync(ProductViewModel entity)
 		{
-			return _unitOfWork.ProductRepository.RemoveAsync(_mapper.Map<Product>(entity));
+			await _unitOfWork.ProductRepository.RemoveAsync(_mapper.Map<Product>(entity));
+			await _unitOfWork.SaveAsync();
 		}
 
 		public void Dispose()
