@@ -1,0 +1,15 @@
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/bin/Debug/net7.0/Vendas
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/bin/Debug/net7.0/Vendas.deps.json
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/bin/Debug/net7.0/Vendas.runtimeconfig.json
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/bin/Debug/net7.0/Vendas.dll
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/bin/Debug/net7.0/Vendas.pdb
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.csproj.AssemblyReference.cache
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.AssemblyInfoInputs.cache
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.AssemblyInfo.cs
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.csproj.CoreCompileInputs.cache
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.dll
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/refint/Vendas.dll
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.pdb
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/Vendas.genruntimeconfig.cache
+/Users/viniciusleal/RiderProjects/Vendas/Vendas/obj/Debug/net7.0/ref/Vendas.dll

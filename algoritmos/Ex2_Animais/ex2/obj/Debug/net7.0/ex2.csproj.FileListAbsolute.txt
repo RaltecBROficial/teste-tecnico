@@ -1,0 +1,15 @@
+/Users/viniciusleal/RiderProjects/ex2/ex2/bin/Debug/net7.0/ex2
+/Users/viniciusleal/RiderProjects/ex2/ex2/bin/Debug/net7.0/ex2.deps.json
+/Users/viniciusleal/RiderProjects/ex2/ex2/bin/Debug/net7.0/ex2.runtimeconfig.json
+/Users/viniciusleal/RiderProjects/ex2/ex2/bin/Debug/net7.0/ex2.dll
+/Users/viniciusleal/RiderProjects/ex2/ex2/bin/Debug/net7.0/ex2.pdb
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.csproj.AssemblyReference.cache
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.AssemblyInfoInputs.cache
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.AssemblyInfo.cs
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.csproj.CoreCompileInputs.cache
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.dll
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/refint/ex2.dll
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.pdb
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ex2.genruntimeconfig.cache
+/Users/viniciusleal/RiderProjects/ex2/ex2/obj/Debug/net7.0/ref/ex2.dll
