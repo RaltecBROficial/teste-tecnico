@@ -15,13 +15,13 @@ Responda as questões neste mesmo arquivo, por favor, responda com suas própria
     Sim, desenvolvi diversos projetos com APIs publicas e privadas. APIs REST são usadas para facilitar a comunicação entre sistemas de software. Exemplos incluem seu uso em aplicativos de mídia social, como o Facebook, e em serviços de pagamento online, como o PayPal.
 
 5. Conhece o conceito de AJAX? Descreva a tecnologia utilizada.
-    Sim, conheço de forma básica, é uma tecnologia que permite a atualização de partes específicas de uma página da web sem a necessidade de recarregar a página inteira. Isso é alcançado por meio de solicitações assíncronas ao servidor, utilizando JavaScript para manipular dados em formatos como JSON.
+    Nunca utilizei em desenvolvimentos de projetos.
 
 6. Conhece o conceito de assincronicidade ? Como usar na tecnologia deste desafio ?
     Assincronicidade é a capacidade de realizar tarefas de forma concorrente e independente, sem esperar que uma tarefa anterior seja concluída. Neste desafio não foi necessário utilizar já que as requisiçoes foram feitas diretamente pelo sistema interno do código.
 
 7. Conhece padrões de projeto ? Descreva um cenário onde usaria um padrão de projeto que implementa IoC, e qual seria este padrão.
-    Nunca utilizei em desenvolvimentos de projetos, tenho um breve conhecimento que é comumente usado em cenários onde dependências, como acesso a um banco de dados, são injetadas em vez de criadas internamente.
+    Nunca utilizei em desenvolvimentos de projetos.
 
 
 
