@@ -2,13 +2,6 @@
 
 Repositório com questões/desafios de desenvolvimento de software
 
-## Orientações para disponibilizar este desafio
-
-- Crie um fork do projeto com o nome da pessoa candidata
-- Remova esta seção
-- Atualize as informações onde XXX aparece
-- Remova seções específicas para tecnologias que não fazem parte deste desafio
-
 ## Orientações para a pessoa candidata
 
 * Abra uma branch nova para seu trabalho
